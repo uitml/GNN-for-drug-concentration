@@ -4,7 +4,7 @@ This repository implements a chemistry-informed Graph Neural Network (GNN) that 
 
 ### Goal: 
 
-The goal of this project is to develop a structure-aware GNN framework that combines local atomic features with global molecular geometry to improve prediction of LC–MS molecular properties. By integrating chemically meaningful descriptors with graph attention mechanisms, the model aims to capture both functional-group effects and whole-molecule structural influences. This enables accurate, data-efficient learning on small chemical libraries such as the 191-molecule LOD set.
+The goal of this project is to develop a structure-aware GNN framework that combines local atomic features with global molecular geometry to improve prediction of LC–MS molecular properties. By integrating chemically meaningful descriptors with graph attention mechanisms, the model aims to capture both functional-group effects and whole-molecule structural influences. This enables accurate, data-efficient learning on small chemical libraries such as the 191-molecules in the LOD set.
 
 ### Notebooks
  **https://github.com/TLutchyn/LOD-library-191-molecules-_LC_MS/blob/main/LOD_library_LOOCV_8Kepochs_tricks.ipynb**
@@ -52,11 +52,11 @@ Most ML methods assume large datasets, but LC–MS quantification libraries are 
 
 This work is unique because it:
 
-- uses Leave-One-Out Cross-Validation (LOOCV), ideal for limited molecular sets
+- uses LOOCV, ideal for limited molecular sets;
 
-- handles rare or unique structural motifs with tailored GAT attention behavior
+- handles rare or unique structural motifs with tailored GAT attention behavior;
 
-- demonstrates stable predictions even for molecules with no close structural analogs
+- demonstrates stable predictions even for molecules with no close structural analogs.
 
 ## 🧭 Summary
 
