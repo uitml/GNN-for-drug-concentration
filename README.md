@@ -9,8 +9,6 @@ The goal of this project is to develop a structure-aware GNN framework that comb
 ### Notebooks
  **https://github.com/TLutchyn/LOD-library-191-molecules-_LC_MS/blob/main/LOD_library_LOOCV_8Kepochs_tricks.ipynb**
 
-## Practice part 2: AI for video, images and audio
-
 ## 📚 Related Work & Inspiration: Efficient-ChemGNN
 
 The work “Efficient Learning of Molecular Properties Using Graph Neural Networks Enhanced with Chemistry Knowledge” demonstrates that combining classical chemical insight with graph neural networks (GNNs) can substantially improve molecular property prediction. 
