@@ -46,7 +46,7 @@ LOOCV (Leave-One-Out Cross-Validation) for robust evaluation on a small, chemica
 
 Practical applicability for analytical chemistry workflows — the code expects small to mid-size libraries, requires modest computational resources, and can integrate with LC–MS data (SMILES + signal/conc) directly, making it accessible for chemistry labs rather than only computational groups.
 
-## Tailored for Small Chemical Libraries (N ≈ 191)
+## Tailored for Small Chemical Libraries (N ≈ 191 molecules)
 
 Most ML methods assume large datasets, but LC–MS quantification libraries are usually small.
 
@@ -64,5 +64,5 @@ This project builds on the foundational ideas demonstrated in TChemGNN, applying
 
 ### 🔍 Notebooks
 
-Each notebook runs in [Google Colab](https://colab.research.google.com/) and supports interactive uploads, inference, and file processing. No local setup required.
+Notebook runs in [Google Colab](https://colab.research.google.com/) and supports interactive uploads, inference, and file processing. No local setup required.
 
