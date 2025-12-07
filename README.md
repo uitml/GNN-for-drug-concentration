@@ -34,7 +34,7 @@ Unlike many generic molecular‐property predictors, our target is the signal/co
 
 ## 🚀 What Makes Our Project Unique (TChemGNN and other GNN Approaches)
 
-Whereas Efficient-ChemGNN proves the general value of combining global molecular features with GNNs, our project stands out by:
+Whereas TChemGNN for open-access libraries proves the general value of combining global molecular features with GNNs, our project stands out by:
 
 - Specializing for LC–MS datasets — the feature engineering, target property (LC–MS response/concentration), and architecture are tuned for mass-spec chemical analytics.
 
