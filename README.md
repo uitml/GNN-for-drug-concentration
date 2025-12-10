@@ -45,6 +45,8 @@ Whereas TChemGNN for open-access libraries proves the general value of combining
 - LOOCV (Leave-One-Out Cross-Validation) for robust evaluation on a small, chemically diverse dataset — ensuring each unique molecule is tested as “new,” reflecting real-world usage where new compounds arise.
   
 - Bootstrap is a resampling technique that repeatedly draws samples with replacement from a dataset to estimate the stability, variability, and uncertainty of model predictions.
+  
+- Combination of LOOCV with gradient accumulation to achieve highly stable and accurate predictions, even on small chemical libraries. Unlike standard training loops, gradient accumulation allows the model to effectively simulate larger batch sizes without exceeding memory limits, improving MSE performance by up to 2× compared to bootstrap methods. Additionally, the training is highly efficient: only a few epochs are needed to reach stable results, while early stopping ensures computational efficiency.
 
 - Practical applicability for analytical chemistry workflows — the code expects small to mid-size libraries, requires modest computational resources, and can integrate with LC–MS data (SMILES + signal/conc) directly, making it accessible for chemistry labs rather than only computational groups.
 
