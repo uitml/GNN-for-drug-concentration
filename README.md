@@ -43,6 +43,8 @@ Whereas TChemGNN for open-access libraries proves the general value of combining
 - Graph Attention Network layers tailored to chemical graphs — allowing attention to pick up on chemically relevant substructures (aromatic rings, heteroatoms, charged centers), which may drive LC–MS behavior more than simple topology.
 
 - LOOCV (Leave-One-Out Cross-Validation) for robust evaluation on a small, chemically diverse dataset — ensuring each unique molecule is tested as “new,” reflecting real-world usage where new compounds arise.
+  
+- Bootstrap is a resampling technique that repeatedly draws samples with replacement from a dataset to estimate the stability, variability, and uncertainty of model predictions.
 
 - Practical applicability for analytical chemistry workflows — the code expects small to mid-size libraries, requires modest computational resources, and can integrate with LC–MS data (SMILES + signal/conc) directly, making it accessible for chemistry labs rather than only computational groups.
 
@@ -53,6 +55,8 @@ Most ML methods assume large datasets, but LC–MS quantification libraries are 
 This work is unique because it:
 
 - uses LOOCV, ideal for limited molecular sets;
+  
+- repeatedly creates new datasets by sampling with replacement to assess the variability, reliability, and uncertainty of model estimates with resampling by boostrap;
 
 - handles rare or unique structural motifs with tailored GAT attention behavior;
 
