@@ -1,17 +1,14 @@
-# LOD library (191 small molecules) LC-MS
+# Predicting the LC-HRMS signal-to-concentration ratio on drug molecules
 
-This repository implements a chemistry-informed Graph Neural Network (GNN) that integrates local atomic descriptors with global molecular features to model structure–property relationships in the LOD library with 191 small molecules in LC–MS equipment. Molecules are converted from SMILES into graphs where each atom node carries rich structural information (i.e., aromaticity, charge, valence, hybridization, mass-based descriptors), and each node is additionally augmented with global geometry features (molecular volume, length, width, height) to give the model full-molecule context beyond connectivity. A multi-layer Graph Attention Network (GAT), inspired by TChemGNN, learns both local substructure effects and broader molecular shape. The workflow includes graph construction, feature assembly, and a LOOCV training strategy optimized for small chemical datasets, providing a robust, structure-aware deep learning framework for molecular property prediction.
+This repository implements a chemistry-informed Graph Neural Network (GNN) that integrates local atomic descriptors with global molecular features to model structure–property relationships in the LC-HRMS signal-to-concentration ratio library with 191 small molecules. The GNN model is directly inspired by [TChemGNN](https://github.com/uitml/TChemGNN). Molecules are converted from SMILES into graphs where each atom node carries rich structural information (i.e., aromaticity, charge, valence, hybridization, mass-based descriptors), and each node is additionally augmented with global geometry features (molecular volume, length, width, height) to give the model full-molecule context beyond connectivity. A multi-layer Graph Attention Network (GAT) learns both local substructure effects and broader molecular shape. The workflow includes graph construction, feature assembly, and a LOOCV training strategy optimized for our small chemical dataset.
 
-### Goal: 
-
-The goal of this project is to develop a structure-aware GNN framework that combines local atomic features with global molecular geometry to improve prediction of LC–MS molecular properties. By integrating chemically meaningful descriptors with graph attention mechanisms, the model aims to capture both functional-group effects and whole-molecule structural influences. This enables accurate, data-efficient learning on small chemical libraries such as the 191-molecules in the LOD set.
 
 ### Notebooks
  **https://github.com/TLutchyn/LOD-library-191-molecules-_LC_MS/blob/main/LOD_library_LOOCV_8Kepochs_tricks.ipynb**
 
 ## 📚 Related Work & Inspiration: ChemGNN
 
-The work “Efficient Learning of Molecular Properties Using Graph Neural Networks Enhanced with Chemistry Knowledge” demonstrates that combining classical chemical insight with graph neural networks (GNNs) can substantially improve molecular property prediction. 
+The work “Efficient Learning of Molecular Properties Using Graph Neural Networks Enhanced with Chemistry Knowledge” by the same authors demonstrates that combining classical chemical insight with graph neural networks (GNNs) can substantially improve molecular property prediction. 
 
 ## ✅ What We Adopt / Extend from TChemGNN in This Repository
 
