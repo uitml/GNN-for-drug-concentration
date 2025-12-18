@@ -1,7 +1,13 @@
-# Predicting the LC-HRMS signal-to-concentration ratio on drug molecules
+# Graph machine learning can estimate drug concentrations in whole blood from forensic screening results
 
-This repository implements a chemistry-informed Graph Neural Network (GNN) that integrates local atomic descriptors with global molecular features to model structure–property relationships in the LC-HRMS signal-to-concentration ratio library with 191 small molecules. The GNN model is directly inspired by [TChemGNN](https://github.com/uitml/TChemGNN). Molecules are converted from SMILES into graphs where each atom node carries rich structural information (i.e., aromaticity, charge, valence, hybridization, mass-based descriptors), and each node is additionally augmented with global geometry features (molecular volume, length, width, height) to give the model full-molecule context beyond connectivity. A multi-layer Graph Attention Network (GAT) learns both local substructure effects and broader molecular shape. The workflow includes graph construction, feature assembly, and a LOOCV training strategy optimized for our small chemical dataset.
+This repository implements a chemistry-informed Graph Neural Network (GNN) that predict the LC-HRMS signal-to-concentration ratio library for drugs in whole blood, trained on a dataset of 191 different molecules. 
 
+The GNN model is directly inspired by [TChemGNN](https://github.com/uitml/TChemGNN). Molecules are converted from SMILES into graphs where each atom node carries rich structural information (i.e., aromaticity, charge, valence, hybridization, mass-based descriptors), and each node is additionally augmented with global geometry features (molecular volume, length, width, height) to give the model full-molecule context beyond connectivity. A multi-layer Graph Attention Network (GAT) learns both local substructure effects and broader molecular shape. 
+
+The workflow includes graph construction, feature assembly, and a LOOCV training strategy optimized for our small chemical dataset.
+
+## Publication
+The code  reproduce the experiments in the paper "Graph machine learning can estimate drug concentrations in whole blood from forensic screening results" available soon on ChemRxiv and under review for publication.
 
 ### Notebooks
  **https://github.com/TLutchyn/LOD-library-191-molecules-_LC_MS/blob/main/LOD_library_LOOCV_8Kepochs_tricks.ipynb**
@@ -24,48 +30,17 @@ As in Efficient-ChemGNN, we acknowledge that bonds alone may not capture all rel
 Our use of GAT layers aligns with the attention-based message-passing architecture favored in GNN chemical modeling. Attention allows the network to weigh different atoms/substructures differently, analogous to how certain functional groups or atom environments contribute more strongly to LC–MS response.
 
 ### - Designed for small-library, small-data regimes (≈ 191 molecules)
-Similarly to Efficient-ChemGNN’s focus on small-molecule datasets, our model is built to work with limited data, leveraging chemistry-informed features and architecture choices to maximize predictive power despite small sample size.
+Our model is built to work with limited data, leveraging chemistry-informed features and architecture choices to maximize predictive power despite small sample size.
 
 ### - Focus on chemically meaningful predictions (LC–MS response, intensity, concentration)
-Unlike many generic molecular‐property predictors, our target is the signal/concentration behavior in LC–MS — a domain where structural context, ionization likelihood, steric hindrance, and electronic features matter significantly. By combining GNN and chemistry knowledge, we aim to bridge cheminformatics and analytical mass-spec modeling.
+Unlike many generic molecular‐property predictors, our target is the signal/concentration behavior in LC–MS on a new original dataset.
 
-## 🚀 What Makes Our Project Unique (TChemGNN and other GNN Approaches)
-
-Whereas TChemGNN for open-access libraries proves the general value of combining global molecular features with GNNs, our project stands out by:
-
-- Specializing for LC–MS datasets — the feature engineering, target property (LC–MS response/concentration), and architecture are tuned for mass-spec chemical analytics.
-
-- A comprehensive atom-level feature set, including several mass-based and hydrogen/valence-based descriptors, in addition to classical bond connectivity — designed to capture nuances affecting ionization and detection.
-
-- Graph Attention Network layers tailored to chemical graphs — allowing attention to pick up on chemically relevant substructures (aromatic rings, heteroatoms, charged centers), which may drive LC–MS behavior more than simple topology.
-
-- LOOCV (Leave-One-Out Cross-Validation) for robust evaluation on a small, chemically diverse dataset — ensuring each unique molecule is tested as “new,” reflecting real-world usage where new compounds arise.
-  
-- Bootstrap is a resampling technique that repeatedly draws samples with replacement from a dataset to estimate the stability, variability, and uncertainty of model predictions.
-  
-- Combination of LOOCV with gradient accumulation to achieve highly stable and accurate predictions, even on small chemical libraries. Unlike standard training loops, gradient accumulation allows the model to effectively simulate larger batch sizes without exceeding memory limits, improving MSE performance by up to 2× compared to bootstrap methods. Additionally, the training is highly efficient: only a few epochs are needed to reach stable results, while early stopping ensures computational efficiency.
-
-- Practical applicability for analytical chemistry workflows — the code expects small to mid-size libraries, requires modest computational resources, and can integrate with LC–MS data (SMILES + signal/conc) directly, making it accessible for chemistry labs rather than only computational groups.
-
-## Tailored for Small Chemical Libraries (N ≈ 191 molecules)
-
-Most ML methods assume large datasets, but LC–MS quantification libraries are usually small.
-
-This work is unique because it:
-
-- uses LOOCV, ideal for limited molecular sets;
-  
-- repeatedly creates new datasets by sampling with replacement to assess the variability, reliability, and uncertainty of model estimates with resampling by boostrap;
-
-- handles rare or unique structural motifs with tailored GAT attention behavior;
-
-- demonstrates stable predictions even for molecules with no close structural analogs.
 
 ## 🧭 Summary
 
-This codes builds on the foundational ideas demonstrated in TChemGNN, applying them to an LC–MS–oriented molecular library. By combining atom-level chemical descriptors, global molecular features, and a GAT-based graph architecture, we aim to deliver a data-efficient, chemically informed, and practically usable GNN-based prediction framework for LC–MS concentration.
+This codes builds on the foundational ideas demonstrated in TChemGNN, applying them to an LC–MS–oriented molecular library. By combining atom-level chemical descriptors, global molecular features, and a GAT-based graph architecture, we aim to deliver a data-efficient, chemically informed, and practically usable GNN-based prediction framework for LC–HRMS concentration.
 
 ### 🔍 Notebooks
 
-Notebook runs in [Google Colab](https://colab.research.google.com/) and supports interactive uploads, inference, and file processing. No local setup required.
+Notebook can be run in [Google Colab](https://colab.research.google.com/) or on a stand alone computer but a GPU is highly recommended for faster training of the GNN.
 
