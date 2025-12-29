@@ -9,7 +9,7 @@ The workflow includes graph construction, feature assembly, and a LOOCV training
 
 ## Publication
 
-The code  reproduce the experiments in the paper "Graph machine learning can estimate drug concentrations in whole blood from forensic screening results" available soon on ChemRxiv and under review for publication.
+The code reproduces the experiments in the paper "Graph machine learning can estimate drug concentrations in whole blood from forensic screening results" available on [ChemRxiv](https://chemrxiv.org/engage/chemrxiv/article-details/694512a96e8e74030e6c3a75) and under review for publication.
 
 ### Notebooks
 
